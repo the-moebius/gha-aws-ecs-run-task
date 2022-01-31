@@ -1,0 +1,43 @@
+
+name: AWS ECS Run Task
+description: Runs AWS ECS tasks via GitHub Actions
+author: Slava Fomin II
+
+runs:
+  using: node16
+  main: dist/index.js
+
+inputs:
+  region:
+    description: 'AWS region'
+    required: false
+
+  launchType:
+    description: 'ECS launch type'
+    required: false
+
+  cluster:
+    description: 'ECS cluster name'
+    required: false
+
+  taskDefinition:
+    description: 'ECS task definition family name'
+    required: true
+
+  subnets:
+    description: 'Subnet IDs delimited by comma'
+    required: false
+
+  securityGroups:
+    description: 'Security groups delimited by comma'
+    required: false
+
+  containerName:
+    description: 'Name of the container in task definition'
+    required: false
+
+  command:
+    description: 'Command to run'
+    required: false
+
+outputs: {}
