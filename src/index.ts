@@ -18,7 +18,6 @@ import {
     await main();
 
   } catch (error: any) {
-    core.error('GitHub action execution failed');
     core.setFailed(error);
   }
 
