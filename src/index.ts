@@ -1,5 +1,5 @@
 
-import core from '@actions/core';
+import * as core from '@actions/core';
 import AWS from 'aws-sdk';
 import process from 'process';
 
