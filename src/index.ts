@@ -19,10 +19,6 @@ import {
 
   } catch (error: any) {
     core.error('GitHub action execution failed');
-    core.error(error);
-    if (error.stack) {
-      core.error(error.stack);
-    }
     core.setFailed(error);
   }
 
