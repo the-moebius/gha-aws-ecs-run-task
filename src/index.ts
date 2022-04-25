@@ -137,6 +137,8 @@ async function main() {
     });
   }
 
+  core.debug(`Overrides: ${JSON.stringify(overrides, null, 4)}`);
+
   const { taskId, monitor } = await startTask(options);
 
   core.info(`\nTask is created:\n${taskId}\n`);
