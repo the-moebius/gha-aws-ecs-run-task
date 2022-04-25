@@ -123,7 +123,7 @@ async function main() {
   //=====================//
 
   const containerName = core.getInput('containerName');
-  const command = core.getInput('command');
+  const command = core.getInput('command').trim();
   if (command && !containerName) {
     throw new Error(
       `Container name must be specified when ` +
@@ -131,11 +131,19 @@ async function main() {
     );
   }
   if (containerName && command) {
+    let commandsList: string[];
+    if (command.startsWith('[') && command.endsWith(']')) {
+      commandsList = JSON.parse(command);
+    } else {
+      commandsList = [command];
+    }
     overrides.push({
       name: containerName,
-      command: [command],
+      command: commandsList,
     });
   }
+
+  core.info(`Overrides: ${JSON.stringify(overrides, null, 4)}`);
 
   const { taskId, monitor } = await startTask(options);
 
