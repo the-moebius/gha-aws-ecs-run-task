@@ -137,7 +137,7 @@ async function main() {
     });
   }
 
-  core.debug(`Overrides: ${JSON.stringify(overrides, null, 4)}`);
+  core.info(`Overrides: ${JSON.stringify(overrides, null, 4)}`);
 
   const { taskId, monitor } = await startTask(options);
 
