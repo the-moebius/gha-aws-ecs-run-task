@@ -133,7 +133,7 @@ async function main() {
   if (containerName && command) {
     overrides.push({
       name: containerName,
-      command: [command],
+      command: [...command.split(' ')],
     });
   }
 
