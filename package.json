@@ -15,7 +15,7 @@
     "node": ">=16"
   },
   "dependencies": {
-    "@actions/core": "^1.7.0",
+    "@actions/core": "^1.9.1",
     "@moebius/aws-ecs-task-runner": "^1.0.2"
   },
   "devDependencies": {
